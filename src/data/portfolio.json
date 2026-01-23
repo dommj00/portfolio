@@ -9,16 +9,16 @@
     "github": "https://github.com/mj-crawley"
   },
   "certifications": [
-    {"name": "ISC2 CCSP", "image": "/portfolio/badges/ccsp.png", "year": "2026", "issuer": "ISC2", "inProgress": true},
-    {"name": "ISC2 SSCP", "image": "/portfolio/badges/sscp.png", "year": "2024", "issuer": "ISC2"},
-    {"name": "CompTIA Security+", "image": "/portfolio/badges/secplus.png", "year": "2023", "issuer": "CompTIA"},
-    {"name": "CompTIA CySA+", "image": "/portfolio/badges/cysa.png", "year": "2023", "issuer": "CompTIA"},
-    {"name": "CompTIA PenTest+", "image": "/portfolio/badges/pentest.png", "year": "2024", "issuer": "CompTIA"},
-    {"name": "CompTIA Network+", "image": "/portfolio/badges/netplus.png", "year": "2023", "issuer": "CompTIA"},
-    {"name": "CompTIA A+", "image": "/portfolio/badges/aplus.png", "year": "2022", "issuer": "CompTIA"},
-    {"name": "CompTIA Project+", "image": "/portfolio/badges/projectplus.png", "year": "2023", "issuer": "CompTIA"},
-    {"name": "ISO 27001 Lead Auditor", "image": "/portfolio/badges/iso27001.png", "year": "2025", "issuer": "MasterMind"},
-    {"name": "ITIL 4 Foundations", "image": "/portfolio/badges/itil4.png", "year": "2023", "issuer": "Axelos"}
+    {"name": "ISC2 CCSP", "image": "/badges/ccsp.png", "year": "2026", "issuer": "ISC2", "inProgress": true},
+    {"name": "ISC2 SSCP", "image": "/badges/sscp.png", "year": "2024", "issuer": "ISC2"},
+    {"name": "CompTIA Security+", "image": "/badges/secplus.png", "year": "2023", "issuer": "CompTIA"},
+    {"name": "CompTIA CySA+", "image": "/badges/cysa.png", "year": "2023", "issuer": "CompTIA"},
+    {"name": "CompTIA PenTest+", "image": "/badges/pentest.png", "year": "2024", "issuer": "CompTIA"},
+    {"name": "CompTIA Network+", "image": "/badges/netplus.png", "year": "2023", "issuer": "CompTIA"},
+    {"name": "CompTIA A+", "image": "/badges/aplus.png", "year": "2022", "issuer": "CompTIA"},
+    {"name": "CompTIA Project+", "image": "/badges/projectplus.png", "year": "2023", "issuer": "CompTIA"},
+    {"name": "ISO 27001 Lead Auditor", "image": "/badges/iso27001.png", "year": "2025", "issuer": "MasterMind"},
+    {"name": "ITIL 4 Foundations", "image": "/badges/itil4.png", "year": "2023", "issuer": "Axelos"}
   ],
   "projects": [
     {
@@ -41,13 +41,13 @@
         {
           "name": "PIM Role Assignments",
           "description": "Role identification and configuration through each stage of the project.",
-          "fileUrl": "/portfolio/artifacts/pim/pim_role_assignments.xlsx",
+          "fileUrl": "/artifacts/pim/pim_role_assignments.xlsx",
           "fileType": "xlsx"
         },
         {
           "name": "PIM Portfolio Report",
           "description": "Portfolio write-up of project objectives, methodology, and outcome.",
-          "fileUrl": "/portfolio/artifacts/pim/pim_report.md",
+          "fileUrl": "/artifacts/pim/pim_report.md",
           "fileType": "md"
         }
       ],
@@ -74,7 +74,7 @@
         {
           "name": "ZTA Gap Analysis",
           "description": "Portfolio write-up of project objectives, methodology, and outcome.",
-          "fileUrl": "/portfolio/artifacts/zta/gap_analysis.md",
+          "fileUrl": "/artifacts/zta/gap_analysis.md",
           "fileType": "md"
         }
       ],
@@ -100,19 +100,19 @@
         {
           "name": "Risk Register",
           "description": "Risk register entry for SQLi finding and recommendation.",
-          "fileUrl": "/portfolio/artifacts/sql-injection/risk_register.xlsx",
+          "fileUrl": "/artifacts/sql-injection/risk_register.xlsx",
           "fileType": "xlsx"
         },
         {
           "name": "SQL Injection Portfolio Report",
           "description": "Portfolio write-up of project objectives, methodology, and outcome.",
-          "fileUrl": "/portfolio/artifacts/sql-injection/sql_report.md",
+          "fileUrl": "artifacts/sql-injection/sql_report.md",
           "fileType": "md"
         },
         {
           "name": "Web Application Scan Report",
           "description": "Findings for web application scan performed by Wapiti.",
-          "fileUrl": "/portfolio/artifacts/sql-injection/wapiti-report.html",
+          "fileUrl": "/artifacts/sql-injection/wapiti-report.html",
           "fileType": "html"
         }
       ],
@@ -137,13 +137,13 @@
         {
           "name": "Security & Privacy Documentation",
           "description": "Summary of security measures and privacy-first implementation.",
-          "fileUrl": "/portfolio/artifacts/brightli/brightli_security_privacy.md",
+          "fileUrl": "/artifacts/brightli/brightli_security_privacy.md",
           "fileType": "md"
         },
         {
           "name": "System Architecture",
           "description": "High-level system design with data flows and security controls.",
-          "fileUrl": "/portfolio/artifacts/brightli/brightli_system_architecture.md",
+          "fileUrl": "/artifacts/brightli/brightli_system_architecture.md",
           "fileType": "md"
         }
       ],
@@ -170,7 +170,7 @@
         {
           "name": "Security Architecture & Threat Model",
           "description": "Summarization of platform objectives, security architecture, and security posture.",
-          "fileUrl": "/portfolio/artifacts/tsp/tsp_security_threat_model.md",
+          "fileUrl": "/artifacts/tsp/tsp_security_threat_model.md",
           "fileType": "md"
         }
       ],
@@ -197,7 +197,7 @@
         {
           "name": "Security Architecture",
           "description": "Security architecture for a multi-tenant SaaS platform.",
-          "fileUrl": "/portfolio/artifacts/furyclips/fc_security_architecture.md",
+          "fileUrl": "/artifacts/furyclips/fc_security_architecture.md",
           "fileType": "md"
         }
       ],
@@ -223,7 +223,7 @@
         {
           "name": "Security & Data Framework",
           "description": "Summary of planned and implemented security measures for data and user protection.",
-          "fileUrl": "/portfolio/artifacts/upset/upset_security_framework.md",
+          "fileUrl": "/artifacts/upset/upset_security_framework.md",
           "fileType": "md"
         }
       ],
@@ -247,13 +247,13 @@
         {
           "name": "CLI Tool Overview",
           "description": "Summary of planned and implemented security measures for data and user protection.",
-          "fileUrl": "/portfolio/artifacts/email-analyzer/email_security_analyzer_overview.md",
+          "fileUrl": "/artifacts/email-analyzer/email_security_analyzer_overview.md",
           "fileType": "md"
         },
         {
           "name": "API Integrations",
           "description": "Threat intelligence sourcing and their utilization in this tool.",
-          "fileUrl": "/portfolio/artifacts/email-analyzer/email_security_analyzer_api.md",
+          "fileUrl": "/artifacts/email-analyzer/email_security_analyzer_api.md",
           "fileType": "md"
         }
       ],
@@ -280,31 +280,31 @@
         {
           "name": "Methodology Flowchart",
           "description": "Seven-phase cyclical process diagram in alignment with NIST 800-30.",
-          "fileUrl": "/portfolio/artifacts/vulnerability-management/methodology_flowchart.pdf",
+          "fileUrl": "/artifacts/vulnerability-management/methodology_flowchart.pdf",
           "fileType": "pdf"
         },
         {
           "name": "Risk Matrix",
           "description": "Likelihood vs. impact scoring matrix with color-coded risk levels (Very Low, Low, Medium, High, Very High, Extreme) for vulnerability prioritization.",
-          "fileUrl": "/portfolio/artifacts/vulnerability-management/risk_matrix.pdf",
+          "fileUrl": "/artifacts/vulnerability-management/risk_matrix.pdf",
           "fileType": "pdf"
         },
         {
           "name": "Risk Register",
           "description": "Excel-based tracking system documenting vulnerability IDs, affected assets, risk scores, remediation actions, ownership, and completion status.",
-          "fileUrl": "/portfolio/artifacts/vulnerability-management/risk_register.xlsx",
+          "fileUrl": "/artifacts/vulnerability-management/risk_register.xlsx",
           "fileType": "xlsx"
         },
         {
           "name": "Network Diagram",
           "description": "VirtualBox lab environment architecture showing Windows and Linux systems, IP addressing scheme, domain controller, web server, and network segmentation with screened submit.",
-          "fileUrl": "/portfolio/artifacts/vulnerability-management/network_diagram.pdf",
+          "fileUrl": "/artifacts/vulnerability-management/network_diagram.pdf",
           "fileType": "pdf"
         },
         {
           "name": "Full Capstone Report",
           "description": "Complete project documentation including problem summary, IT solution, implementation plan, methodology, timeline analysis, and success evaluation.",
-          "fileUrl": "/portfolio/artifacts/vulnerability-management/capstone_report.md",
+          "fileUrl": "/artifacts/vulnerability-management/capstone_report.md",
           "fileType": "md"
         }
       ],
