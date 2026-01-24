@@ -40,7 +40,7 @@ const Hero = ({ personalInfo }) => {
             </p>
             
             <p>
-              I'm particularly interested in IT Security Administrator and IT Security Engineer roles where I can leverage my hands-on experience with identity and access management, vulnerability assessment, and compliance frameworks. I believe in continuous learning and regularly work on lab projects to expand my practical skillset beyond what my current role provides.
+              I'm particularly interested in IT cybersecurity roles where I can leverage my hands-on experience with identity and access management, vulnerability assessment, and compliance frameworks. I believe in continuous learning and regularly work on lab projects to expand my practical skillset beyond what my current role provides.
             </p>
           </div>
 
