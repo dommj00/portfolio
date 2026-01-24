@@ -46,7 +46,7 @@ const Hero = ({ personalInfo }) => {
 
           {/* Core Competencies - 1/3 width */}
           <div className="bg-slate-800/50 border border-slate-700 rounded-lg p-6">
-            <h3 className="text-xl font-bold mb-4 text-cyan-400">Core Competencies</h3>
+            <h3 className="text-xl font-bold mb-4 text-cyan-400">Specializations</h3>
             <ul className="space-y-2 text-slate-300">
               <li className="flex items-start space-x-2">
                 <span className="text-cyan-400 mt-1">•</span>
@@ -63,10 +63,6 @@ const Hero = ({ personalInfo }) => {
               <li className="flex items-start space-x-2">
                 <span className="text-cyan-400 mt-1">•</span>
                 <span>Cloud Security (Azure, GCP)</span>
-              </li>
-              <li className="flex items-start space-x-2">
-                <span className="text-cyan-400 mt-1">•</span>
-                <span>SIEM/SOAR Implementation</span>
               </li>
               <li className="flex items-start space-x-2">
                 <span className="text-cyan-400 mt-1">•</span>
