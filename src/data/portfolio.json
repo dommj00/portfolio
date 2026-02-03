@@ -125,26 +125,26 @@
       "objective": "Develop a privacy-first iOS planner with local-first data architecture to eliminate exposure of personal user-generated data and establish user security.",
       "techStack": ["React Native", "JavaScript", "AsyncStorage", "RevenueCat", "iCloud"],
       "method": [
-        "Threat modeled to identify attack surface",
-        "Designed local-first storage to eliminate server vulnerabilities",
-        "Implemented input validation and data health checking",
-        "Built CCPA-compliant data export and deletion features",
-        "Delegated payments to RevenueCat for PCI DSS compliance",
-        "Validated security controls through testing"
+        "Leveraged Apple's encryption methods by using local first storage and users' personal iCloud",
+        "Reduced attack surface by designing the app to work without need for servers",
+        "Implemented input validation tactics to prevent injection and overflow attacks",
+        "Data minimization: collect only necessary personal information",
+        "Actions taken to adhere with CCPA, PCI DSS, HIPAA, and GDPR ",
+        "Used proper error handling to avoid leaking internal code"
       ],
-      "skills": ["Mobile Development", "Privacy by Design", "CCPA Compliance", "Threat Modeling"],
+      "skills": ["Risk Analysis", "Mobile App Development", "Privacy by Design", "Mobile App Security", "Security Compliance", "Threat Modeling"],
       "artifacts": [
         {
-          "name": "Security & Privacy Documentation",
-          "description": "Summary of security measures and privacy-first implementation.",
-          "fileUrl": "/artifacts/brightli/brightli_security_privacy.md",
+          "name": "Brightli Compliance & Actions Taken",
+          "description": "Compliance requirements and actions taken to satisfy them.",
+          "fileUrl": "/artifacts/brightli/brightli-compliance-actions.md",
           "fileType": "md"
         },
         {
-          "name": "System Architecture",
+          "name": "Brightli Purchase Flow - RevenueCat",
           "description": "High-level system design with data flows and security controls.",
-          "fileUrl": "/artifacts/brightli/brightli_system_architecture.md",
-          "fileType": "md"
+          "fileUrl": "/artifacts/brightli/brightli-purchase-flow.pdf",
+          "fileType": "pdf"
         }
       ],
       "liveUrl": "https://apps.apple.com/sa/app/brightli/id6754242822",
