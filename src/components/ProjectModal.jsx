@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { X, ArrowLeft, Shield, Code, Wrench, Award, FileText, CheckCircle, Download, File } from 'lucide-react';
+import { X, ArrowLeft, Shield, Code, Wrench, Award, FileText, CheckCircle, BookMarked, Download, File } from 'lucide-react';
 import * as XLSX from 'xlsx';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
@@ -374,11 +374,11 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
           {view === 'project' ? (
             /* Project Details View */
             <div className="space-y-8">
-              {/* Objective */}
+              {/* About */}
               <div>
                 <h3 className="text-lg font-bold mb-3 flex items-center space-x-2">
-                  <Shield className="w-5 h-5 text-cyan-400" />
-                  <span>Objective</span>
+                  <BookMarked className="w-5 h-5 text-cyan-400" />
+                  <span>About</span>
                 </h3>
                 <p className="text-slate-300 leading-relaxed">{project.objective}</p>
               </div>
@@ -387,7 +387,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
               <div>
                 <h3 className="text-lg font-bold mb-3 flex items-center space-x-2">
                   <Code className="w-5 h-5 text-cyan-400" />
-                  <span>Technology Stack</span>
+                  <span>Tech Stack</span>
                 </h3>
                 <div className="flex flex-wrap gap-2">
                   {project.techStack.map((tech, idx) => (
@@ -398,12 +398,12 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
                 </div>
               </div>
 
-              {/* Method */}
+              {/* Security Actions */}
               {project.method && project.method.length > 0 && (
                 <div>
                   <h3 className="text-lg font-bold mb-3 flex items-center space-x-2">
-                    <Wrench className="w-5 h-5 text-cyan-400" />
-                    <span>Implementation Method</span>
+                    <Shield className="w-5 h-5 text-cyan-400" />
+                    <span>Key Security Actions</span>
                   </h3>
                   <ul className="space-y-2">
                     {project.method.map((step, idx) => (
