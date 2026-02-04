@@ -122,15 +122,15 @@
       "id": "brightli",
       "name": "Brightli - iOS Productivity App",
       "category": "Application Development",
-      "objective": "Brightli is a productivity planner app built on iOS using React Native. The app was designed with a privacy-first approach to create trust with users, given the nature of the data that may be recorded within the app, and to eliminate the burden of applying mitigating controls for a one-person dev team.",
+      "objective": "Brightli is a productivity planner app built on iOS using React Native. The app was designed with a privacy-first approach to create trust with users, given the nature of the nature of the personal reflections and activity patterns recorded within the app. This approach was also taken to eliminate the burden of managing server-side security as a one-person dev team.",
       "techStack": ["React Native", "JavaScript", "AsyncStorage", "RevenueCat", "iCloud"],
       "method": [
-        "Leveraged Apple's encryption methods by using local first storage and users' personal iCloud",
-        "Reduced attack surface by designing the app to work without need for servers",
-        "Implemented input validation tactics to prevent injection and overflow attacks",
-        "Data minimization: collect only necessary personal information",
-        "Actions taken to adhere with CCPA, PCI DSS, HIPAA, and GDPR ",
-        "Used proper error handling to avoid leaking internal code"
+        "Leveraged Apple's encryption methods for storage by using local and iCloud storage",
+        "Eliminated server-side attacks through local-first architecture with optional iCloud",
+        "Implemented input validation measures to prevent injection and overflow attacks",
+        "Data minimization principle applied to collect only necessary personal information",
+        "Designed controls to aligned with CCPA, PCI DSS and GDPR requirements",
+        "Used proper error handling practices to avoid leaking internal code"
       ],
       "skills": ["Risk Analysis", "Mobile App Development", "Privacy by Design", "Mobile App Security", "Security Compliance", "Threat Modeling"],
       "artifacts": [
