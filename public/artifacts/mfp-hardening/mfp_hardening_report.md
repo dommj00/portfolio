@@ -14,11 +14,11 @@ This portfolio exercise was conducted in a controlled M365 E5 developer tenant c
 
 ## Scenario
 
-The Bookshop Company (TBC) operates 20 multifunction printers (MFPs) across 10 site locations. These printers provide scan-to-email functionality, allowing employees to scan documents and send them to internal recipients.
+The Bookshop Company (TBC) operates 20 multifunction printers (MFPs) across 10 site locations. These printers provide scan-to-email functionality for all employees to scan documents and send them to receipients on the GAL.
 
-To enable this, a single shared service account — bksp-mfp@mjsecuritylab.com — is authenticated on each MFP using SMTP credentials (email address, password, and SMTP port configuration). Once signed in, employees select recipients from the Microsoft Global Address List (GAL) and scan directly to email.
+To enable this, a single shared service account, bksp-mfp@mjsecuritylab.com, is authenticated on each MFP using SMTP credentials (email address, password, and SMTP port configuration). Once signed in, employees can select recipients from the Microsoft Global Address List (GAL) and sent scan documents directly to the selected emails.
 
-The problem: The MFP SMTP authentication flow does not support multi-factor authentication. This means a single-factor service account with a static password is exposed across 20 network devices at 10 physical locations — with no MFA protection.
+The problem: The MFP SMTP authentication flow does not support multi-factor authentication. This means this service account with single factor authentication is exposed across 20 network devices at 10 physical locations with no other protection.
 
 ## Environment Details
 
@@ -31,9 +31,9 @@ The problem: The MFP SMTP authentication flow does not support multi-factor auth
 | MFA Support | Not supported by MFP hardware |
 | License Requirement | Entra ID P1 or P2 (for Conditional Access and Identity Protection) |
 
-## Your Task
+## Objective
 
-Harden the bksp-mfp@mjsecuritylab.com service account to the maximum extent possible without breaking scan-to-email functionality. Since MFA is not an option, you need to design and implement compensating controls using Conditional Access policies, account permission restrictions, monitoring, and a defensible password policy.
+Harden the bksp-mfp@mjsecuritylab.com service account to the maximum extent possible without breaking scan-to-email functionality. Since MFA is not an option, the design should use compensating controls comprised of Conditional Access policies, account permission restrictions, monitoring, and a defensible password policy.
 
 ---
 
