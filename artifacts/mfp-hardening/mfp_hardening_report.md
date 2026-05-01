@@ -6,7 +6,7 @@
 **Microsoft Entra ID / Microsoft 365 E5 Dev Tenant**
 
 **Completed By:** Manita Crawley
-**Assessment Date:** April 2025
+**Assessment Date:** April 2026
 
 This portfolio exercise was conducted in a controlled M365 E5 developer tenant created specifically for educational and portfolio demonstration purposes. All findings and configurations are based on this test environment to showcase practical skills.
 
