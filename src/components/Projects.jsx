@@ -4,7 +4,6 @@ const Projects = ({ projects, onProjectClick }) => {
   // Group projects by category
   const categories = {
     'Security Engineering': projects.filter(p => p.category === 'Security Engineering'),
-    'Application Development': projects.filter(p => p.category === 'Application Development'),
     'Risk Management': projects.filter(p => p.category === 'Risk Management'),
     'Security Tooling': projects.filter(p => p.category === 'Security Tooling')
   };

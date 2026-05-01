@@ -8,7 +8,7 @@ const Certifications = ({ certifications }) => {
         <span>Certifications</span>
       </h2>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-        {certifications.map((cert, index) => (
+        {certifications.filter(c => !c.hidden).map((cert, index) => (
           <div
             key={index}
             className="bg-slate-800/50 border border-slate-700 rounded-lg p-6 hover:border-cyan-500/50 transition-all flex flex-col items-center text-center group"

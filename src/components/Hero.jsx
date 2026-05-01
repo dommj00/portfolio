@@ -16,9 +16,6 @@ const Hero = ({ personalInfo }) => {
         <h2 className="text-2xl md:text-3xl text-cyan-400 mb-4">
           {personalInfo.title}
         </h2>
-        <p className="text-xl text-slate-300">
-          {personalInfo.tagline}
-        </p>
       </div>
 
       {/* About Section */}
@@ -32,16 +29,19 @@ const Hero = ({ personalInfo }) => {
           {/* Experience Text - 2/3 width */}
           <div className="md:col-span-2 space-y-4 text-slate-300 leading-relaxed">
             <p>
-              I'm a cybersecurity professional with eight years of IT experience, currently working as a Solutions Engineer while transitioning into dedicated security roles. My background spans mobile device repair, video conferencing support, and MSP work, which has given me a comprehensive understanding of IT operations from the ground up.
+              I am a Security Engineer with eight total years of IT experience. My IT background is vast as it is diverse but it has a signature; identify a problem, draft solutions, then determine the most effective way to implement the best and most qualified ones.
             </p>
             
             <p>
-              What drives me is the challenge of translating complex security frameworks into practical, implementable solutions. I specialize in Zero Trust Architecture, cloud identity security, and governance initiatives that balance security requirements with operational efficiency. While my background includes secure application development, my focus is on implementing enterprise security infrastructure, managing identity and access systems, and operationalizing security frameworks across production environments.
+              At this stage in my career, the challenge of conducting deep investigations and drawing solutions is especially important. This does not only translate to Analyst work, but it holds weight when engineering solutions which may be multi-part or direct depending on the problem or the client needs.
             </p>
             
             <p>
-              I'm particularly interested in IT cybersecurity roles where I can leverage my hands-on experience with identity and access management, vulnerability assessment, and compliance frameworks. I believe in continuous learning and regularly work on lab projects to expand my practical skillset beyond what my current role provides.
+              My project work reflects my genuine interest and intrigue in the IT and security field. I’ve researched different types of projects that contribute to skill building in the security space as well as recreated and anonymized complex scenarios at my day job then re-solved them in my lab environment with the greater flexibility it allows.            
             </p>
+
+            <p>
+              The next phase in my career, will continue to help me develop my analytical skillset and engineering skills through more complex, thought-provoking challenges.             </p>
           </div>
 
           {/* Core Competencies - 1/3 width */}
