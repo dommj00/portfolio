@@ -83,7 +83,7 @@
       "id": "mfp-hardening",
       "name": "MFP Service Account Hardening",
       "category": "Security Engineering",
-      "objective": "Harden a shared MFP scan-to-email service account across 20 printers at 10 sites where MFA wasn't supported, using Conditional Access and compensating controls",
+      "objective": "Harden a shared MFP scan-to-email service account across 20 printers at 10 sites where MFA wasn't supported by using Conditional Access and compensating controls",
       "techStack": [
         "Microsoft Entra ID",
         "Microsoft 365 E5",
@@ -93,19 +93,19 @@
         "SMTP AUTH"
       ],
       "method": [
-        "Generated and vaulted an 18-character random password in IT Glue with SSO-gated access",
-        "Disabled SSPR to prevent attacker-driven password resets during incident response",
-        "Assigned no Entra ID roles to keep the blast radius minimal",
+        "Generated and securely stored an 18-character random password in IT Glue",
+        "Disabled SSPR to prevent password resets in the event of compromise",
+        "Assigned no Entra ID roles to minimize blast radius",
         "Restricted mail flow to intra-organizational senders and recipients only",
         "Stripped the license down to Exchange Online, Defender for Office 365, and Entra ID P1",
         "Removed all mail authentication methods except Authenticated SMTP",
-        "Deployed three layered Conditional Access policies: country-based, IP-based, and legacy auth block"
+        "Deployed layered CA policies: country-based, IP-based, and legacy auth block"
       ],
       "skills": [
         "Microsoft Entra ID administration",
         "Conditional Access policy design",
         "Defense in depth",
-        "Compensating controls for non-MFA-capable systems",
+        "Compensating controls",
         "Principle of least privilege",
         "Mail flow and Exchange Online configuration",
         "Identity hardening"
