@@ -5,8 +5,8 @@
 **M365 Security — Conditional Access Series**
 **Microsoft Entra ID / Microsoft 365 E5 Dev Tenant**
 
-**Completed By:** Manita Joseph
-**Assessment Date:** [add date]
+**Completed By:** Manita Crawley
+**Assessment Date:** April 2025
 
 This portfolio exercise was conducted in a controlled M365 E5 developer tenant created specifically for educational and portfolio demonstration purposes. All findings and configurations are based on this test environment to showcase practical skills.
 
@@ -16,7 +16,7 @@ This portfolio exercise was conducted in a controlled M365 E5 developer tenant c
 
 The Bookshop Company (TBC) operates 20 multifunction printers (MFPs) across 10 site locations. These printers provide scan-to-email functionality, allowing employees to scan documents and send them to internal recipients.
 
-To enable this, a single shared service account — printer@mjsecuritylab.com — is authenticated on each MFP using SMTP credentials (email address, password, and SMTP port configuration). Once signed in, employees select recipients from the Microsoft Global Address List (GAL) and scan directly to email.
+To enable this, a single shared service account — bksp-mfp@mjsecuritylab.com — is authenticated on each MFP using SMTP credentials (email address, password, and SMTP port configuration). Once signed in, employees select recipients from the Microsoft Global Address List (GAL) and scan directly to email.
 
 The problem: The MFP SMTP authentication flow does not support multi-factor authentication. This means a single-factor service account with a static password is exposed across 20 network devices at 10 physical locations — with no MFA protection.
 

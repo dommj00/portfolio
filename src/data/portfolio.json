@@ -93,7 +93,7 @@
         "SMTP AUTH"
       ],
       "method": [
-        "Generated and securely stored an 18-character random password in IT Glue",
+        "Generated and securely stored an 18-character randomized password in IT Glue",
         "Disabled SSPR to prevent password resets in the event of compromise",
         "Assigned no Entra ID roles to minimize blast radius",
         "Restricted mail flow to intra-organizational senders and recipients only",
