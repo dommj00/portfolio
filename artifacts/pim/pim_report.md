@@ -3,23 +3,17 @@
 **Completed By:** Manita Crawley  
 **Completion Period:** December 2025
 
-*This project was performed in a security lab environment using a Microsoft 365 Developer subscription. All users, roles, and configurations were created for learning and demonstration purposes.*
-
-### **Executive Summary**
-
-This report demonstrates a Privileged Identity Management implementation for BookShop Enterprises which is a fictional e-commerce book store I created for this lab environment. The project is focused on addressing standing privileged access, which is one of the more common security gaps in identity management. The solution involved implementing Just-in-Time access controls, role governance, and periodic access reviews.
-
-During the project activities, 21 admin roles were updated from permanent to eligible. This means users activate roles only when needed with a time limit on access windows. High-impact roles require approval before activation and quarterly access reviews are now in place. The result is a significantly reduced attack surface since privileged access now only exists when absolutely necessary with audit trails for compliance purposes.
+*This project was performed in a security lab environment using a Microsoft 365 Developer subscription. All users, roles, and configurations were created for learning purposes.*
 
 ### **Scenario**
 
-BookShop Enterprises is an e-commerce company with 25 employees from different departments, including Executive, Technology, Finance, Human Resources, Marketing, and Store Operations. When considering the usage of PIM in the environment, there were several security gaps discovered in identity and access management:
+BookShop Enterprises is a pseudo e-commerce company with 25 employees from different departments, including Executive, Technology, Finance, Human Resources, Marketing, and Store Operations. When considering the usage of PIM in the environment, there were several security gaps discovered in identity and access management:
 
 - Admin accounts had permanent access to privileged roles around the clock
 - No audit trail for when admin actions happened or why
 - Possibility for privilege creep
 - No separation of duties on high-impact admin changes
-- Compliance gaps for PCI DSS 7.2 and SOX Section 404 identified in gap analysis
+- Compliance gaps for PCI DSS identified in gap analysis
 
 ### **Objective**
 
@@ -27,25 +21,25 @@ The goal was to build a PIM solution that would:
 
 1. Remove permanent privileged access through Just-in-Time role activation
 2. Enforce the principle of least privilege for all admin roles
-3. Implement approval workflows for high-impact admin changes
+3. Implement approval workflows for high impact changes
 4. Create audit trails for all privileged access activities
 5. Establish periodic access reviews for ongoing governance
-6. Address compliance requirements for PCI DSS and SOX
+6. Address compliance requirements for PCI DSS
 
 ### **Environment Details**
 
-**Tenant:** Microsoft 365 Developer (mjsecuritylab.com)  
+**Tenant:** Microsoft 365 Developer, mjsecuritylab.com 
 **Directory Service:** Microsoft Entra ID  
 **License:** Microsoft 365 E5 Developer  
 **Total Users:** 25 users, 6 departments  
 **Admin Roles:** 21 Entra ID roles configured  
-**Break-Glass Accounts:** 2 accounts (bg-admin01, bg-admin02)
+**Break Glass Accounts:** 2 accounts (bg-admin01, bg-admin02)
 
 ### **Implementation Process**
 
 ### **Step 1: Identify Organizational Structure and Job Titles**
 
-The first step included reviewing the existing user base to understand the organizational structure. This meant exporting user data from Microsoft Entra ID and categorizing employees by department and job function.
+The first step included reviewing the existing user base the needs based on the company structure. This meant exporting user data from Microsoft Entra ID and categorizing employees by department and job function.
 
 | **Department** | **Job Titles** | **Count** |
 |---|---|---|
@@ -58,7 +52,7 @@ The first step included reviewing the existing user base to understand the organ
 
 ### **Step 2: Identify Job Functions Requiring Admin Roles**
 
-Not every employee needs admin access. The principle of least privilege involves permitting only the access needed for an employee's job functions. After assessing the different job responsibilities, the following roles were identified as needing admin capabilities:
+Applying the principle of least privilege to this audit would emphasize the point that not every employee needs admin access. It involves allowing only the access needed for an employee's job functions. After assessing the different job responsibilities, the following roles were identified as needing admin capabilities:
 
 - **Technology Team:** IT operations, security configuration, user management, compliance, application management, and help desk support
 - **Executive (Limited):** Read-only access for oversight (CTO), financial management (CFO)
@@ -68,11 +62,11 @@ Not every employee needs admin access. The principle of least privilege involves
 
 ### **Step 3: Configure Roles for the Environment**
 
-After reviewing and assessing the different job titles, 21 Entra ID roles were selected for PIM implementation. Each role was evaluated based on its functions and risk level to determine the necessary activation settings.
+After reviewing and assessing the different job titles, 21 Entra ID roles were selected for PIM implementation. Each role was evaluated based on its functions and risk level to determine the best activation settings.
 
-#### **High-Impact Roles (Approval Required)**
+#### **High Impact Roles (Approval Required)**
 
-These roles can make changes that impact the tenant, thus requiring approval before activation:
+These are the roles that can make changes that impact the tenant, thus requiring approval before activation:
 
 | **Role** | **Capabilities** | **Duration** |
 |---|---|---|
@@ -84,7 +78,7 @@ These roles can make changes that impact the tenant, thus requiring approval bef
 
 #### **Operational Roles (Self-Activation)**
 
-These roles are used for daily operations and can be self-activated with justification:
+These roles are used for daily operations and can be self-activated with justification recorded to maintain the audit trail:
 
 | **Role** | **Capabilities** | **Duration** |
 |---|---|---|
@@ -129,7 +123,7 @@ Each user was assigned only the roles necessary for their specific job function.
 
 ### **Step 5: Determine Active vs. Eligible Assignments**
 
-One of the key decisions in PIM implementation is determining which assignments should be Active versus Eligible. Active assignments are permanent and always-on, while Eligible assignments require activation when needed. The goal is to minimize standing privileges without hindering operational capability.
+One of the key decisions in PIM implementation is determining which assignments should be Active versus Eligible. Active assignments are permanent and always on, while Eligible assignments require activation with approval when needed. The goal is to minimize standing privileges without hindering operational capability.
 
 | **Assignment Type** | **Behavior** | **Use Case** |
 |---|---|---|
@@ -139,11 +133,11 @@ One of the key decisions in PIM implementation is determining which assignments 
 #### **Assignment Decisions**
 
 - **Active Assignments:** Only bg-admin01 and bg-admin02 have permanent Global Administrator role. These accounts are primarily for emergency situations where PIM, MFA, or approvers are unavailable.
-- **Eligible Assignments:** All other admin roles are set as Eligible. Users must explicitly activate their role, provide justification, and the role automatically expires after the selected duration.
+- **Eligible Assignments:** All other admin roles are set as Eligible. Users must explicitly activate their role, provide a justification record, and the role automatically expires after the selected duration.
 
 ### **Step 6: Establish Approval Workflows**
 
-For high-impact roles such as Security Administrator, approval workflows ensure separation of duties and create an additional point of control before approving privileged access. Approvers were selected based on role responsibility and separation of concerns.
+For high impact roles such as Security Administrator, approval workflows ensure separation of duties and create an additional point of control before approving privileged access. Approvers were selected based on role responsibility and separation of concerns.
 
 #### **Approver Selection Criteria**
 
@@ -165,7 +159,7 @@ For high-impact roles such as Security Administrator, approval workflows ensure 
 
 ### **Step 7: Testing and Validation**
 
-During testing, the PIM configurations were validated and ensured role boundaries were correctly enforced.
+During testing, the PIM configurations were confirmed and ensured role boundaries were correctly enforced.
 
 #### **Test 1: Self-Activation Workflow**
 
@@ -252,56 +246,26 @@ The primary configuration account (Chippy Munk) maintains an Active Global Admin
 
 MFA requirement for role activation was tested on one account and confirmed working correctly, but was not enforced across all accounts to reduce complexity in this testing environment. In a live environment, MFA would be required for all role activations as a baseline security control. A review of the audit records confirmed that MFA integration worked when enabled.
 
-### **Risk Assessment & Business Impact**
-
-#### **Security Gaps Addressed**
-
-| **Gap ID** | **Issue** | **PIM Resolution** | **Risk Reduction** |
-|---|---|---|---|
-| I2 | Static privilege assignment, 24/7 admin access | JIT activation with time limits | High |
-| I4 | Accounts audited only when events occur | Scheduled quarterly access reviews | Medium |
-| PCI 7.2 | Least privileges for job function | Role-based assignments with justification | High |
-| SOX 404 | Internal controls over privileged access | Approval workflows and audit logs | High |
-
-#### **Impact**
-
-- **Attack Surface Reduction:** Standing access went from 24/7 to only when someone activates it. This now significantly reduces the potential exposure based on how often users will activate roles per week to perform their duties.
-- **Audit Coverage:** All privileged role activations are now logged with justification, an approver, a timestamp, and duration
-- **Compliance Posture:** Audit logs provide evidence of least privilege controls for PCI DSS 7.2 and SOX 404 audits
-
 ### **Improvement Areas**
 
 While the implementation addressed core privileged access challenges, the following improvements would further strengthen the security posture:
 
 #### **1. Ensure Multiple Approvers for Each Role**
 
-Currently, some high-impact roles have only a single approver set. If that approver is unavailable due to vacation, illness, or account compromise, activation requests could be delayed or blocked. Each role requiring approval should have at least two designated approvers for coverage and business continuity. This also provides redundancy when an approver needs to recuse themselves due to conflict of interest.
+Currently, some high impact roles have only a single approver set. If that approver is unavailable due to vacation, illness, or account compromise, activation requests could be delayed or blocked. Each role requiring approval should have at least two designated approvers for coverage and business continuity.
 
 #### **2. Expand Access Reviews to All PIM-Enabled Roles**
 
-The initial access review was configured as a pilot for the Helpdesk Administrator role only. In a live implementation, access reviews would cover all 21 PIM-enabled roles. Different review frequencies may be appropriate based on role sensitivity. For example, quarterly reviews work well for high-impact roles like Global Admin, Security Admin, and Privileged Role Admin. Whereas, semi-annual reviews may be best for operational roles like User Admin, Groups Admin, and Application Admin.
+The initial access review was configured as a pilot for the Helpdesk Administrator role only. In a live implementation, access reviews would cover all 21 PIM-enabled roles. Different review frequencies may be appropriate based on role. For example, quarterly reviews work well for high impact roles like Global Admin, Security Admin, and Privileged Role Admin. Semi-annual reviews may be best for operational roles like User Admin, Groups Admin, and Application Admin.
 
 #### **3. Implement Time-of-Day Restrictions**
 
-Certain high-impact roles could benefit from time-of-day restrictions that limit activation to business hours only. Global Administrator activation at 3:00 AM on a Sunday is suspicious and more likely indicates compromised credentials than a legitimate admin needs. This would require additional configuration through Conditional Access policies integrated with PIM, to create an additional layer of defense against off-hours attacks. Emergency access is always available through break-glass accounts and should continue to bypass PIM controls.
-
-### **Conclusion**
-
-This Privileged Identity Management implementation for BookShop Enterprises sufficiently addresses the standing privilege problem. By converting permanent roles to eligible assignments with Just-in-Time activation and audit logging, a significant reduction of the attack surface is expected without hindering operations.
-
-Key objectives met include implementation of 21 admin roles with the necessary activation settings, approval workflows for 5 high-impact roles, validation of role boundaries to prevent privilege escalation, and quarterly access reviews for ongoing audits.
-
-This project shows a practical application of the principle of least privilege, separation of duties, and defense-in-depth using Microsoft's native identity governance tools.
+All roles, but especially high impact roles would add an additional layer of security with time of day restrictions that limit activation to business hours only. This would require additional configuration through Conditional Access policies integrated with PIM, to create an additional layer of defense against off-hours attacks.
 
 ### **References**
 
 - Microsoft Learn: Deploy Microsoft Entra Privileged Identity Management
-- Microsoft Learn: Configure Entra role settings in PIM
-- NIST SP 800-53: AC-2 Account Management
-- CIS Controls v8: Control 5 (Account Management), Control 6 (Access Control)
 - PCI DSS v4.0: Requirement 7 - Restrict Access by Business Need-to-Know
-- SOX Section 404: Internal Controls over Privileged Access
-- ISO 27001:2022: A.9.2 Access Rights Management
 
 ### **Appendix**
 
