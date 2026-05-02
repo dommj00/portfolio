@@ -1,9 +1,9 @@
 # Privileged Identity Management Implementation
 
-**Completed By:** Manita Crawley  
+**Completed By:** Manita Crawley
 **Completion Period:** December 2025
 
-*This project was performed in a security lab environment using a Microsoft 365 Developer subscription. All users, roles, and configurations were created for learning purposes.*
+_This project was performed in a security lab environment using a Microsoft 365 Developer subscription. All users, roles, and configurations were created for learning purposes._
 
 ### **Scenario**
 
@@ -28,39 +28,39 @@ The goal was to build a PIM solution that would:
 
 ### **Environment Details**
 
-**Tenant:** Microsoft 365 Developer, mjsecuritylab.com 
-**Directory Service:** Microsoft Entra ID  
-**License:** Microsoft 365 E5 Developer  
-**Total Users:** 25 users, 6 departments  
-**Admin Roles:** 21 Entra ID roles configured  
+**Tenant:** Microsoft 365 Developer (mjsecuritylab.com)
+**Directory Service:** Microsoft Entra ID
+**License:** Microsoft 365 E5 Developer
+**Total Users:** 25 users, 6 departments
+**Admin Roles:** 21 Entra ID roles configured
 **Break Glass Accounts:** 2 accounts (bg-admin01, bg-admin02)
 
 ### **Implementation Process**
 
-### **Step 1: Identify Organizational Structure and Job Titles**
+### **Identify Organizational Structure and Job Titles**
 
-The first step included reviewing the existing user base the needs based on the company structure. This meant exporting user data from Microsoft Entra ID and categorizing employees by department and job function.
+The first step included reviewing the existing user base to identify needs based on the company structure. This included exporting user data from Entra ID and categorizing employees by department and job function.
 
-| **Department** | **Job Titles** | **Count** |
-|---|---|---|
-| Executive | CEO, CTO, CFO, CMO | 4 |
-| Technology | IT Manager, IT Ops Manager, Sr. Security Engineer, Sr. Security Analyst, Jr. Security Analyst, GRC Engineer, Help Desk Analyst (x2), Web Developer | 9 |
-| Finance | Financial Analyst, Sr. Accountant | 2 |
-| Human Resources | Recruiter, HR Generalist | 2 |
-| Marketing | Communications Leader, Marketing Analyst | 2 |
-| Store Team | Store Manager, Asst. Manager, Team Lead, Associates | 6 |
+| **Department**  | **Job Titles**                                                                                                                                     | **Count** |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | --------- |
+| Executive       | CEO, CTO, CFO, CMO                                                                                                                                 | 4         |
+| Technology      | IT Manager, IT Ops Manager, Sr. Security Engineer, Sr. Security Analyst, Jr. Security Analyst, GRC Engineer, Help Desk Analyst (x2), Web Developer | 9         |
+| Finance         | Financial Analyst, Sr. Accountant                                                                                                                  | 2         |
+| Human Resources | Recruiter, HR Generalist                                                                                                                           | 2         |
+| Marketing       | Communications Leader, Marketing Analyst                                                                                                           | 2         |
+| Store Team      | Store Manager, Asst. Manager, Team Lead, Associates                                                                                                | 6         |
 
-### **Step 2: Identify Job Functions Requiring Admin Roles**
+### **Identify Job Functions Requiring Admin Roles**
 
-Applying the principle of least privilege to this audit would emphasize the point that not every employee needs admin access. It involves allowing only the access needed for an employee's job functions. After assessing the different job responsibilities, the following roles were identified as needing admin capabilities:
+Applying the principle of least privilege to this audit emphasizes the point that not every employee needs admin access. It involves allowing only the access needed for an employee's job functions. After assessing the different needs in the BookShop environment, I determined that the following job functions would need admin roles:
 
 - **Technology Team:** IT operations, security configuration, user management, compliance, application management, and help desk support
 - **Executive (Limited):** Read-only access for oversight (CTO), financial management (CFO)
 - **Other Departments:** No administrative roles required - standard user access only
 
-**Decision:** C-suite executives do not automatically receive admin roles based on title. The CEO and CMO were determined to not require any Entra ID admin roles since their job functions do not include technical administration. Access should be based on job function if adhering to the principle of least privilege.
+**Decision:** C-suite executives do not automatically receive admin roles based on title. It was determined that the CEO and CMO do not require any Entra ID admin roles since thei job functions do not include technical administration. Access should be based on job function if adhering to the principle of least privilege.
 
-### **Step 3: Configure Roles for the Environment**
+### **Configure Roles for the Environment**
 
 After reviewing and assessing the different job titles, 21 Entra ID roles were selected for PIM implementation. Each role was evaluated based on its functions and risk level to determine the best activation settings.
 
@@ -68,74 +68,74 @@ After reviewing and assessing the different job titles, 21 Entra ID roles were s
 
 These are the roles that can make changes that impact the tenant, thus requiring approval before activation:
 
-| **Role** | **Capabilities** | **Duration** |
-|---|---|---|
-| Global Administrator | Full access to all admin features | 1 hour |
-| Privileged Role Administrator | Manage PIM settings and role assignments | 1 hour |
-| Privileged Authentication Admin | Reset MFA for any user including admins | 1 hour |
-| Security Administrator | Manage security features, Defender, Conditional Access policies | 4 hours |
-| Conditional Access Administrator | Create and manage access policies | 4 hours |
+| **Role**                         | **Capabilities**                                                | **Duration** |
+| -------------------------------- | --------------------------------------------------------------- | ------------ |
+| Global Administrator             | Full access to all admin features                               | 1 hour       |
+| Privileged Role Administrator    | Manage PIM settings and role assignments                        | 1 hour       |
+| Privileged Authentication Admin  | Reset MFA for any user including admins                         | 1 hour       |
+| Security Administrator           | Manage security features, Defender, Conditional Access policies | 4 hours      |
+| Conditional Access Administrator | Create and manage access policies                               | 4 hours      |
 
 #### **Operational Roles (Self-Activation)**
 
 These roles are used for daily operations and can be self-activated with justification recorded to maintain the audit trail:
 
-| **Role** | **Capabilities** | **Duration** |
-|---|---|---|
-| User Administrator | Create/manage users, reset passwords | 8 hours |
-| Groups Administrator | Manage groups and membership | 8 hours |
-| Helpdesk Administrator | Reset passwords for non-admin users | 8 hours |
-| Authentication Administrator | Manage MFA for non-admin users | 4 hours |
-| Application Administrator | Manage app registrations and enterprise apps | 4 hours |
-| Intune Administrator | Manage devices and compliance policies | 4 hours |
-| Exchange Administrator | Manage mail flow and Exchange settings | 4 hours |
-| Security Operator | Respond to security alerts, investigate | 8 hours |
-| Compliance Administrator | Manage DLP, retention, sensitivity labels | 4 hours |
-| Compliance Data Administrator | Content searches, eDiscovery cases | 4 hours |
+| **Role**                      | **Capabilities**                             | **Duration** |
+| ----------------------------- | -------------------------------------------- | ------------ |
+| User Administrator            | Create/manage users, reset passwords         | 8 hours      |
+| Groups Administrator          | Manage groups and membership                 | 8 hours      |
+| Helpdesk Administrator        | Reset passwords for non-admin users          | 8 hours      |
+| Authentication Administrator  | Manage MFA for non-admin users               | 4 hours      |
+| Application Administrator     | Manage app registrations and enterprise apps | 4 hours      |
+| Intune Administrator          | Manage devices and compliance policies       | 4 hours      |
+| Exchange Administrator        | Manage mail flow and Exchange settings       | 4 hours      |
+| Security Operator             | Respond to security alerts, investigate      | 8 hours      |
+| Compliance Administrator      | Manage DLP, retention, sensitivity labels    | 4 hours      |
+| Compliance Data Administrator | Content searches, eDiscovery cases           | 4 hours      |
 
 #### **Read-Only Roles (Executive Oversight)**
 
-| **Role** | **Capabilities** | **Duration** |
-|---|---|---|
-| Global Reader | Read-only access to all admin centers | 8 hours |
-| Security Reader | Read-only security reports and alerts | 8 hours |
-| Reports Reader | View usage and adoption reports | 8 hours |
-| Billing Administrator | Manage subscriptions and payments | 4 hours |
+| **Role**              | **Capabilities**                      | **Duration** |
+| --------------------- | ------------------------------------- | ------------ |
+| Global Reader         | Read-only access to all admin centers | 8 hours      |
+| Security Reader       | Read-only security reports and alerts | 8 hours      |
+| Reports Reader        | View usage and adoption reports       | 8 hours      |
+| Billing Administrator | Manage subscriptions and payments     | 4 hours      |
 
-### **Step 4: Apply the Principle of Least Privilege to User Roles**
+### **Apply the Principle of Least Privilege to User Roles**
 
 Each user was assigned only the roles necessary for their specific job function. This required analyzing daily tasks, responsibilities, and access patterns for each position.
 
-| **User** | **Job Title** | **Assigned Roles (Rationale)** |
-|---|---|---|
-| Chippy Munk | IT Manager | Global Admin, Privileged Role Admin, Privileged Auth Admin, License Admin - Primary administrator responsible for tenant management |
-| Reg Gae | IT Ops Manager | User Admin, Groups Admin, Authentication Admin - User lifecycle management and group administration |
-| Paul Lynn | Sr. Security Engineer | Security Admin, CA Admin, Attack Sim Admin, Intune Admin, Exchange Admin - Security configuration across all platforms |
-| Hip Hoppen | Sr. Security Analyst | Security Operator - Incident response and alert investigation |
-| Rhythm Blues | Jr. Security Analyst | Security Operator, Helpdesk Admin - Tier 1 security ops and password resets for compromised accounts |
-| Straw Berry | GRC Engineer | Compliance Admin, Compliance Data Admin - DLP policies and compliance management |
-| Dance Hall | Help Desk Analyst | Helpdesk Admin, Authentication Admin - Password resets and MFA support |
-| Countree Muzeek | Help Desk Analyst | Helpdesk Admin, Authentication Admin - Password resets and MFA support |
-| Bar Chata | Web Developer | Application Admin - Manage app registrations for web application |
-| Nin Tendo | CTO | Global Reader, Security Reader, Reports Reader - Executive oversight without modification rights |
-| Keys Board | CFO | Billing Admin - Financial management of M365 subscriptions |
-| BG-Admin01/02 | Break-Glass | Global Admin (PERMANENT) - Emergency access accounts |
+| **User**        | **Job Title**         | **Assigned Roles (Rationale)**                                                                                                      |
+| --------------- | --------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| Chippy Munk     | IT Manager            | Global Admin, Privileged Role Admin, Privileged Auth Admin, License Admin - Primary administrator responsible for tenant management |
+| Reg Gae         | IT Ops Manager        | User Admin, Groups Admin, Authentication Admin - User lifecycle management and group administration                                 |
+| Paul Lynn       | Sr. Security Engineer | Security Admin, CA Admin, Attack Sim Admin, Intune Admin, Exchange Admin - Security configuration across all platforms              |
+| Hip Hoppen      | Sr. Security Analyst  | Security Operator - Incident response and alert investigation                                                                       |
+| Rhythm Blues    | Jr. Security Analyst  | Security Operator, Helpdesk Admin - Tier 1 security ops and password resets for compromised accounts                                |
+| Straw Berry     | GRC Engineer          | Compliance Admin, Compliance Data Admin - DLP policies and compliance management                                                    |
+| Dance Hall      | Help Desk Analyst     | Helpdesk Admin, Authentication Admin - Password resets and MFA support                                                              |
+| Countree Muzeek | Help Desk Analyst     | Helpdesk Admin, Authentication Admin - Password resets and MFA support                                                              |
+| Bar Chata       | Web Developer         | Application Admin - Manage app registrations for web application                                                                    |
+| Nin Tendo       | CTO                   | Global Reader, Security Reader, Reports Reader - Executive oversight without modification rights                                    |
+| Keys Board      | CFO                   | Billing Admin - Financial management of M365 subscriptions                                                                          |
+| BG-Admin01/02   | Break-Glass           | Global Admin (PERMANENT) - Emergency access accounts                                                                                |
 
-### **Step 5: Determine Active vs. Eligible Assignments**
+### **Determine Active vs. Eligible Assignments**
 
 One of the key decisions in PIM implementation is determining which assignments should be Active versus Eligible. Active assignments are permanent and always on, while Eligible assignments require activation with approval when needed. The goal is to minimize standing privileges without hindering operational capability.
 
-| **Assignment Type** | **Behavior** | **Use Case** |
-|---|---|---|
-| Active (Permanent) | User has the role all the time, no activation needed | Only for break-glass emergency accounts |
-| Eligible | User requests activation when they need it | All normal admin accounts |
+| **Assignment Type** | **Behavior**                                         | **Use Case**                            |
+| ------------------- | ---------------------------------------------------- | --------------------------------------- |
+| Active (Permanent)  | User has the role all the time, no activation needed | Only for break-glass emergency accounts |
+| Eligible            | User requests activation when they need it           | All normal admin accounts               |
 
 #### **Assignment Decisions**
 
 - **Active Assignments:** Only bg-admin01 and bg-admin02 have permanent Global Administrator role. These accounts are primarily for emergency situations where PIM, MFA, or approvers are unavailable.
 - **Eligible Assignments:** All other admin roles are set as Eligible. Users must explicitly activate their role, provide a justification record, and the role automatically expires after the selected duration.
 
-### **Step 6: Establish Approval Workflows**
+### **Establish Approval Workflows**
 
 For high impact roles such as Security Administrator, approval workflows ensure separation of duties and create an additional point of control before approving privileged access. Approvers were selected based on role responsibility and separation of concerns.
 
@@ -148,20 +148,20 @@ For high impact roles such as Security Administrator, approval workflows ensure 
 
 #### **Final Approval Configuration**
 
-| **Role** | **Activation Type** | **Approver(s)** |
-|---|---|---|
-| Global Administrator | Require Approval | R.Gae (IT Ops Manager) |
-| Privileged Role Administrator | Require Approval | R.Gae (IT Ops Manager) |
-| Privileged Authentication Admin | Require Approval | R.Gae (IT Ops Manager) |
-| Security Administrator | Require Approval | R.Gae, Chippy (IT Manager) |
-| Conditional Access Administrator | Require Approval | R.Gae, Chippy (IT Manager) |
-| All Other Roles | Self-Activate | None (justification required) |
+| **Role**                         | **Activation Type** | **Approver(s)**               |
+| -------------------------------- | ------------------- | ----------------------------- |
+| Global Administrator             | Require Approval    | R.Gae (IT Ops Manager)        |
+| Privileged Role Administrator    | Require Approval    | R.Gae (IT Ops Manager)        |
+| Privileged Authentication Admin  | Require Approval    | R.Gae (IT Ops Manager)        |
+| Security Administrator           | Require Approval    | R.Gae, Chippy (IT Manager)    |
+| Conditional Access Administrator | Require Approval    | R.Gae, Chippy (IT Manager)    |
+| All Other Roles                  | Self-Activate       | None (justification required) |
 
-### **Step 7: Testing and Validation**
+### **Testing and Validation**
 
 During testing, the PIM configurations were confirmed and ensured role boundaries were correctly enforced.
 
-#### **Test 1: Self-Activation Workflow**
+#### **Test 1**
 
 **Objective:** Ensure eligible users can activate their roles when needed and that the justification requirement works.
 
@@ -173,7 +173,7 @@ During testing, the PIM configurations were confirmed and ensured role boundarie
 
 **Result:** PASS - Role came up, audit trail got created
 
-#### **Test 2: Role Boundary Enforcement**
+#### **Test 2**
 
 **Objective:** Confirm the role hierarchy prevents privilege escalation.
 
@@ -184,7 +184,7 @@ During testing, the PIM configurations were confirmed and ensured role boundarie
 
 **Result:** PASS - Helpdesk Admin got blocked trying to reset an admin's password. Escalation prevented
 
-#### **Test 3: Approval Workflow**
+#### **Test 3**
 
 **Objective:** Confirm that request-approval workflow runs as expected for roles with approvers.
 
@@ -199,7 +199,7 @@ During testing, the PIM configurations were confirmed and ensured role boundarie
 
 **Result:** PASS - Approval workflow ran as expected, notifications were sent, and audit trail the events
 
-#### **Test 4: Role Deactivation**
+#### **Test 4**
 
 **Objective:** Confirm users can deactivate their own roles.
 
@@ -207,20 +207,20 @@ Paul Lynn manually deactivated the Security Administrator role through PIM > My 
 
 **Result:** PASS - Manual deactivation executed successfully
 
-### **Step 8: Configure and Execute Access Reviews**
+### **Configure and Execute Access Reviews**
 
 Access reviews provide periodic review of roles to verify users still require their assigned privileges. This is important to avoid privilege creep to prevent users from accumulating roles they no longer need over time.
 
 #### **Access Review Configuration**
 
-| **Setting** | **Value** |
-|---|---|
-| Review Name | Quarterly PIM Role Review - Q1 2025 |
-| Scope | Helpdesk Administrator role (test) |
-| Reviewers | Chippy Munk (IT Manager) |
-| Recurrence | Quarterly |
-| Duration | 14 days for reviewer response |
-| Assignment Types | Eligible and Active |
+| **Setting**      | **Value**                           |
+| ---------------- | ----------------------------------- |
+| Review Name      | Quarterly PIM Role Review - Q1 2025 |
+| Scope            | Helpdesk Administrator role (test)  |
+| Reviewers        | Chippy Munk (IT Manager)            |
+| Recurrence       | Quarterly                           |
+| Duration         | 14 days for reviewer response       |
+| Assignment Types | Eligible and Active                 |
 
 #### **Access Review Execution**
 
@@ -228,21 +228,21 @@ The access review showed three users for evaluation: Rhythm Blues, Dance Hall, a
 
 #### **Review Decisions**
 
-| **User** | **Decision** | **Justification** |
-|---|---|---|
-| Rhythm Blues | Approved | Active Jr. Security Analyst - requires Helpdesk Admin for password resets on compromised accounts |
-| Dance Hall | Approved | Active Help Desk Analyst - access required for daily support tasks |
-| Countree Muzeek | Approved | Active Help Desk Analyst - access required for daily support tasks |
+| **User**        | **Decision** | **Justification**                                                                                 |
+| --------------- | ------------ | ------------------------------------------------------------------------------------------------- |
+| Rhythm Blues    | Approved     | Active Jr. Security Analyst - requires Helpdesk Admin for password resets on compromised accounts |
+| Dance Hall      | Approved     | Active Help Desk Analyst - access required for daily support tasks                                |
+| Countree Muzeek | Approved     | Active Help Desk Analyst - access required for daily support tasks                                |
 
 #### **Situational Exceptions**
 
 Two exceptions were made for this testing environment that would be handled differently in production:
 
-**Exception 1: Chippy Munk Active Global Administrator**
+**Chippy Munk Active Global Administrator**
 
 The primary configuration account (Chippy Munk) maintains an Active Global Administrator assignment rather than Eligible. This was necessary because converting the account to Eligible while actively configuring PIM would require activating the role for every configuration change, which adds unnecessary complexity during implementation. In a production environment, this account would be converted to Eligible as a final step after all configurations are complete and tested.
 
-**Exception 2: MFA Disabled for Role Activation**
+**MFA Disabled for Role Activation**
 
 MFA requirement for role activation was tested on one account and confirmed working correctly, but was not enforced across all accounts to reduce complexity in this testing environment. In a live environment, MFA would be required for all role activations as a baseline security control. A review of the audit records confirmed that MFA integration worked when enabled.
 
@@ -250,15 +250,15 @@ MFA requirement for role activation was tested on one account and confirmed work
 
 While the implementation addressed core privileged access challenges, the following improvements would further strengthen the security posture:
 
-#### **1. Ensure Multiple Approvers for Each Role**
+#### **Ensure Multiple Approvers for Each Role**
 
 Currently, some high impact roles have only a single approver set. If that approver is unavailable due to vacation, illness, or account compromise, activation requests could be delayed or blocked. Each role requiring approval should have at least two designated approvers for coverage and business continuity.
 
-#### **2. Expand Access Reviews to All PIM-Enabled Roles**
+#### **Expand Access Reviews to All PIM-Enabled Roles**
 
 The initial access review was configured as a pilot for the Helpdesk Administrator role only. In a live implementation, access reviews would cover all 21 PIM-enabled roles. Different review frequencies may be appropriate based on role. For example, quarterly reviews work well for high impact roles like Global Admin, Security Admin, and Privileged Role Admin. Semi-annual reviews may be best for operational roles like User Admin, Groups Admin, and Application Admin.
 
-#### **3. Implement Time-of-Day Restrictions**
+#### **Implement Time-of-Day Restrictions**
 
 All roles, but especially high impact roles would add an additional layer of security with time of day restrictions that limit activation to business hours only. This would require additional configuration through Conditional Access policies integrated with PIM, to create an additional layer of defense against off-hours attacks.
 
