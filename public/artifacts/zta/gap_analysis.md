@@ -32,7 +32,7 @@ _Controls were categorized using the CISA Zero Trust Maturity Model._
 | **Component** | **Current Implementation** | **Maturity Level** |
 |---|---|---|
 | Authentication | All users are prompted to reset default password on initial sign in to the cloud environment. Users provide preferred password to admin upon user creation for Bookshop app access. | Traditional |
-| MFA Authentication | Users are prompted to set up MFA on initial sign in to the cloud environment. No MFA set up for Bookshop application access. | |
+| MFA Authentication | Users are prompted to set up MFA on initial sign in to the cloud environment. No MFA set up for Bookshop application access. | Traditional |
 | User Deprovisioning | There is no set SLA for user deprovisioning requests | Traditional |
 | Account Audits | The company takes a reactive approach to account audits. | Traditional |
 | Privileged Access | Admins are granted permanent rights. | Traditional |
