@@ -63,12 +63,12 @@
         "Mapped existing security boundaries and trust relationships",
         "Identified sensitive data flows to pinpoint vulnerabilities",
         "Compared current state vs NIST SP 800-207 ZT principles",
-        "Scored maturity using 1-5 scale across 6 control domains",
-        "Applied Likelihood × Impact methodology for risk assessment",
-        "Mapped gaps to ISO 27001, PCI DSS, and CISA ZT Model",
+        "Assigned risk level based on exploitability and impact",
+        "Mapped gaps to ISO 27001 and PCI DSS",
+        "Categorized Device and Identity Management findings based on CISA ZT Maturity Model",
         "Prioritized by risk and created phased remediation plan"
       ],
-      "skills": ["Risk Assessment", "NIST Frameworks", "Security Architecture", "Gap Analysis", "Compliance Mapping"],
+      "skills": ["Risk Assessment", "NIST Frameworks", "ISO 270001", "CISA ZT Maturity Model", "PCI DSS", "Security Architecture", "Gap Analysis", "Compliance Mapping"],
       "artifacts": [
         {
           "name": "ZTA Gap Analysis",
