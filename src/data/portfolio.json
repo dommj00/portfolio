@@ -57,7 +57,7 @@
       "name": "Zero Trust Architecture Gap Analysis",
       "category": "Security Engineering",
       "objective": "Conduct security assessment against NIST SP 800-207 to identify gaps and develop remediation roadmap",
-      "techStack": ["NIST SP 800-207", "Azure Security", "CISA ZT Maturity Model", "ISO 27001", "CIS Controls v8"],
+      "techStack": ["NIST SP 800-207", "Entra ID", "VirtualBox", "CISA ZT Maturity Model", "ISO 27001", "CIS Controls v8"],
       "method": [
         "Inventoried all digital and assumed physical assets",
         "Mapped existing security boundaries and trust relationships",
